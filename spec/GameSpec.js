@@ -24,7 +24,7 @@ describe('Game', function(){
   });
 
   it('can roll a strike', function(){
-    game.roll(10);
+    rollStrike();
     game.roll(3);
     game.roll(4);
     rollMany(16,0);
@@ -40,5 +40,9 @@ describe('Game', function(){
   function rollSpare(){
     game.roll(5);
     game.roll(5);
+  }
+
+  function rollStrike(){
+    game.roll(10)
   }
 });
