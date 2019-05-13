@@ -7,16 +7,18 @@ describe('Game', function(){
   });
 
   it('can calculate a gutter game', function(){
-    for (i = 0; i < 20; i++) {
-    game.roll(0)
-  };
-  expect(game.score).toEqual(0)
+    rollMany(20, 0)
+    expect(game.score).toBe(0)
   });
 
   it('can roll all ones', function(){
-    for (i = 0; i < 20; i++) {
-    game.roll(1)
-  };
-  expect(game.score).toEqual(20)
+    rollMany(20, 1)
+    expect(game.score).toBe(20)
   });
+
+  function rollMany(rolls, pins){
+    for(var i = 0; i < rolls; i ++) {
+      game.roll(pins)
+    }
+  }
 });
