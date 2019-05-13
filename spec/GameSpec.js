@@ -21,7 +21,15 @@ describe('Game', function(){
     game.roll(3);
     rollMany(17,0);
     expect(game.score()).toBe(16)
-  })
+  });
+
+  it('can roll a strike', function(){
+    game.roll(10);
+    game.roll(3);
+    game.roll(4);
+    rollMany(16,0);
+    expect(game.score()).toBe(24)
+  });
 
   function rollMany(rolls, pins){
     for(var i = 0; i < rolls; i ++) {
