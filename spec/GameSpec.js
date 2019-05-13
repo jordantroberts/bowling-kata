@@ -33,11 +33,12 @@ describe('Game', function() {
 
   it('can roll a perfect game', function(){
     rollMany(12,10);
-    expect(game.score()).toBe(300)
+    expect(game.score()).toBe(300);
   });
 
-  function rollMany(rolls, pins) {
-      game.roll(pins);
+  function rollMany(rolls, pins){
+    for(var i = 0; i < rolls; i ++) {
+      game.roll(pins)
     };
   };
 
