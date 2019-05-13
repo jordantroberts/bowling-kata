@@ -17,8 +17,7 @@ describe('Game', function(){
   });
 
   it('can roll a spare', function(){
-    game.roll(5);
-    game.roll(5);
+    rollSpare()
     game.roll(3);
     rollMany(17,0);
     expect(game.score()).toBe(16)
@@ -28,5 +27,10 @@ describe('Game', function(){
     for(var i = 0; i < rolls; i ++) {
       game.roll(pins)
     }
+  }
+
+  function rollSpare(){
+    game.roll(5);
+    game.roll(5);
   }
 });
