@@ -1,10 +1,10 @@
 function Game (){
   this.rolls = [ ]
-  this.currentRoll = 0;
+  // this.currentRoll = 0;
 };
 
 Game.prototype.roll = function(pins) {
-  this.rolls[this.currentRoll++] = pins;
+  this.rolls.push(pins);
 };
 
 Game.prototype.score = function() {
